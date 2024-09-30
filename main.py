@@ -58,11 +58,12 @@ if st.button('Perform OCR'):
         pil_img = Image.fromarray(img_rgb) 
 
         
-        if language == "Hindi":
-            predicted_text = predict_hindi_ocr(pil_img)  
+        if language == "English":
+          predicted_text = english_ocr(pil_img)[0]['generated_text']
+            #predicted_text = predict_hindi_ocr(pil_img)  
         else:
            
-            predicted_text = english_ocr(pil_img)[0]['generated_text']
+            predicted_text = predict_hindi_ocr(pil_img)
 
         #
         st.write(f"Predicted text: {predicted_text}")
